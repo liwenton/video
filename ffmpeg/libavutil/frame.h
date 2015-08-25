@@ -252,6 +252,7 @@ typedef struct AVFrame {
     /**
      * Sample aspect ratio for the video frame, 0/1 if unknown/unspecified.
      */
+	//帧的宽高比（16:9,4:3)
     AVRational sample_aspect_ratio;
 
     /**
@@ -275,10 +276,12 @@ typedef struct AVFrame {
     /**
      * picture number in bitstream order
      */
+	//编码帧序号
     int coded_picture_number;
     /**
      * picture number in display order
      */
+	//显示帧序号
     int display_picture_number;
 
     /**
@@ -368,6 +371,7 @@ typedef struct AVFrame {
     /**
      * The content of the picture is interlaced.
      */
+	//是否隔行扫描
     int interlaced_frame;
 
     /**

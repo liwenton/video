@@ -896,7 +896,7 @@ typedef struct AVStream {
      * If a source file does not specify a duration, but does specify
      * a bitrate, this value will be estimated from bitrate and file size.
      */
-	//流的长度
+	//视频/音频的裸流的长度
     int64_t duration;
 
     int64_t nb_frames;                 ///< number of frames in this stream if known or 0
@@ -910,8 +910,9 @@ typedef struct AVStream {
      * - encoding: Set by user.
      * - decoding: Set by libavformat.
      */
+	
     AVRational sample_aspect_ratio;
-
+	//元数据
     AVDictionary *metadata;
 
     /**
@@ -921,6 +922,7 @@ typedef struct AVStream {
      *             avformat_find_stream_info().
      * - muxing: May be set by the caller before avformat_write_header().
      */
+	//帧率
     AVRational avg_frame_rate;
 
     /**
@@ -930,6 +932,7 @@ typedef struct AVStream {
      * decoding: set by libavformat, must not be modified by the caller.
      * encoding: unused
      */
+	//附带的图片，比如说一些MP3，AAC音频文件附带的专辑封面
     AVPacket attached_pic;
 
     /**
