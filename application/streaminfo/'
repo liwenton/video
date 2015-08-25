@@ -1170,9 +1170,7 @@ typedef struct AVPacket {
      * Can be AV_NOPTS_VALUE if it is not stored in the file.
      */
     int64_t dts;
-	//数据
     uint8_t *data;
-	//数据大小
     int   size;
     int   stream_index;
     /**
@@ -1416,7 +1414,6 @@ typedef struct AVCodecContext {
      * - encoding: Set by libavcodec.
      * - decoding: Set by libavcodec.
      */
-	//编码延迟的帧数
     int delay;
 
 
@@ -1434,7 +1431,6 @@ typedef struct AVCodecContext {
      *             to be set by the caller. During decoding, the decoder may
      *             overwrite those values as required while parsing the data.
      */
-	//宽、高
     int width, height;
 
     /**
@@ -1461,7 +1457,6 @@ typedef struct AVCodecContext {
      * - encoding: Set by user.
      * - decoding: unused
      */
-	//GOP的大小
     int gop_size;
 
     /**
@@ -1477,7 +1472,6 @@ typedef struct AVCodecContext {
      * - decoding: Set by user if known, overridden by libavcodec while
      *             parsing the data.
      */
-	//像素格式，RGB/YUV
     enum AVPixelFormat pix_fmt;
 
     /**

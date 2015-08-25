@@ -502,6 +502,7 @@ typedef struct AVProbeData {
  * @{
  */
 typedef struct AVOutputFormat {
+	//输去文件名
     const char *name;
     /**
      * Descriptive name for the format, meant to be more human-readable
@@ -617,6 +618,7 @@ typedef struct AVInputFormat {
      * A comma separated list of short names for the format. New names
      * may be appended with a minor bump.
      */
+	//视频格式名
     const char *name;
 
     /**
@@ -838,6 +840,7 @@ typedef struct AVStream {
      * decoding: set by libavformat
      * encoding: set by the user, replaced by libavformat if left unset
      */
+	//序号
     int id;
     /**
      * Codec context associated with this stream. Allocated and freed by
@@ -850,6 +853,7 @@ typedef struct AVStream {
      *             documentation must be set even if this AVCodecContext is
      *             not actually used for encoding.
      */
+	 //对应的AVCodecContext
     AVCodecContext *codec;
     void *priv_data;
 
@@ -873,6 +877,7 @@ typedef struct AVStream {
      *           written into the file (which may or may not be related to the
      *           user-provided one, depending on the format).
      */
+	//流的时基
     AVRational time_base;
 
     /**
@@ -883,6 +888,7 @@ typedef struct AVStream {
      * @note The ASF header does NOT contain a correct start_time the ASF
      * demuxer must NOT set this.
      */
+	 //第一帧的PTS
     int64_t start_time;
 
     /**
@@ -890,6 +896,7 @@ typedef struct AVStream {
      * If a source file does not specify a duration, but does specify
      * a bitrate, this value will be estimated from bitrate and file size.
      */
+	//流的长度
     int64_t duration;
 
     int64_t nb_frames;                 ///< number of frames in this stream if known or 0
@@ -1272,6 +1279,7 @@ typedef struct AVFormatContext {
      *
      * Demuxing only, set by avformat_open_input().
      */
+	//输入文件
     struct AVInputFormat *iformat;
 
     /**
@@ -1279,6 +1287,7 @@ typedef struct AVFormatContext {
      *
      * Muxing only, must be set by the caller before avformat_write_header().
      */
+	//输去文件
     struct AVOutputFormat *oformat;
 
     /**
@@ -1316,6 +1325,7 @@ typedef struct AVFormatContext {
      *
      * Set by avformat_new_stream(), must not be modified by any other code.
      */
+   	//音视频流的个数
     unsigned int nb_streams;
     /**
      * A list of all streams in the file. New streams are created with
@@ -1355,6 +1365,7 @@ typedef struct AVFormatContext {
      *
      * Demuxing only, set by libavformat.
      */
+	//总视频时长
     int64_t duration;
 
     /**
@@ -1362,6 +1373,7 @@ typedef struct AVFormatContext {
      * available. Never set it directly if the file_size and the
      * duration are known as FFmpeg can compute it automatically.
      */
+	//全部流的比特率大小
     int bit_rate;
 
     unsigned int packet_size;

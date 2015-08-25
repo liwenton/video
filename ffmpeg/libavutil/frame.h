@@ -217,6 +217,7 @@ typedef struct AVFrame {
     /**
      * width and height of the video frame
      */
+	//帧的高宽
     int width, height;
 
     /**
@@ -234,11 +235,13 @@ typedef struct AVFrame {
     /**
      * 1 -> keyframe, 0-> not
      */
+	//是否为关键帧
     int key_frame;
 
     /**
      * Picture type of the frame.
      */
+	//帧的类型
     enum AVPictureType pict_type;
 
 #if FF_API_AVFRAME_LAVC
@@ -254,6 +257,7 @@ typedef struct AVFrame {
     /**
      * Presentation timestamp in time_base units (time when frame should be shown to user).
      */
+	
     int64_t pts;
 
     /**
