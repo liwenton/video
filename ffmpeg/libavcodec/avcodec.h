@@ -1369,6 +1369,7 @@ typedef struct AVCodecContext {
      * - encoding: Set/allocated/freed by libavcodec.
      * - decoding: Set/allocated/freed by user.
      */
+	//针对特定编码器包含的附加信息（例如对于H.264解码器来说，存储SPS，PPS等）
     uint8_t *extradata;
     int extradata_size;
 
@@ -2870,6 +2871,7 @@ typedef struct AVCodecContext {
      * - encoding: Set by user.
      * - decoding: Set by libavcodec.
      */
+	 //profile
      int profile;
 #define FF_PROFILE_UNKNOWN -99
 #define FF_PROFILE_RESERVED -100
@@ -2959,6 +2961,7 @@ typedef struct AVCodecContext {
      * - encoding: Set by user.
      * - decoding: Set by libavcodec.
      */
+	 //level
      int level;
 #define FF_LEVEL_UNKNOWN -99
 
